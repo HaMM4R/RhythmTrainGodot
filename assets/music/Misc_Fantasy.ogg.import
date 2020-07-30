@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Misc_Fantasy.ogg-853e6ca86027de43ff491298eb44c3f2.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Misc_Fantasy.ogg"
+dest_files=[ "res://.import/Misc_Fantasy.ogg-853e6ca86027de43ff491298eb44c3f2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

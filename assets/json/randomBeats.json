@@ -1,0 +1,38 @@
+{
+  "RandomBars": [
+    {
+      "name": "4 Quarter",
+      "notes": [
+        {
+          "time": 0.25,
+          "name": "E4"
+        },
+        {
+          "time": 0.25,
+          "name": "E4"
+        },
+        {
+          "time": 0.25,
+          "name": "r"
+        },
+        {
+          "time": 0.25,
+          "name": "E4"
+        }
+      ]
+    },
+	{
+      "name": "4 Quarter",
+      "notes": [
+        {
+          "time": 0.5,
+          "name": "E4"
+        },
+        {
+          "time": 0.5,
+          "name": "E4"
+        }
+      ]
+    },
+  ]
+}

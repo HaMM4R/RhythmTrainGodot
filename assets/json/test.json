@@ -1,0 +1,340 @@
+{
+  "header": {
+    "keySignatures": [
+      {
+        "key": "C",
+        "scale": "major",
+        "ticks": 0
+      }
+    ],
+    "meta": [
+      {
+        "ticks": 0,
+        "type": "portPrefix"
+      },
+      {
+        "ticks": 0,
+        "type": "portPrefix"
+      },
+      {
+        "ticks": 0,
+        "type": "portPrefix"
+      }
+    ],
+    "name": "",
+    "ppq": 480,
+    "tempos": [
+      {
+        "bpm": 120,
+        "ticks": 0
+      }
+    ],
+    "timeSignatures": [
+      {
+        "ticks": 0,
+        "timeSignature": [
+          4,
+          4
+        ],
+        "measures": 0
+      }
+    ]
+  },
+  "tracks": [
+    {
+      "channel": 0,
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.7874015748031497
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ],
+        "91": [
+          {
+            "number": 91,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "93": [
+          {
+            "number": 93,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      },
+      "pitchBends": [],
+      "instrument": {
+        "family": "guitar",
+        "name": "acoustic guitar (steel)",
+        "number": 25
+      },
+      "name": "",
+      "notes": [
+        {
+          "duration": 0.49895833333333334,
+          "durationTicks": 479,
+          "midi": 53,
+          "name": "F3",
+          "ticks": 0,
+          "time": 0,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333333,
+          "durationTicks": 479,
+          "midi": 55,
+          "name": "G3",
+          "ticks": 480,
+          "time": 0.5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 57,
+          "name": "A3",
+          "ticks": 960,
+          "time": 1,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 59,
+          "name": "B3",
+          "ticks": 1440,
+          "time": 1.5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 52,
+          "name": "E3",
+          "ticks": 1920,
+          "time": 2,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 53,
+          "name": "F3",
+          "ticks": 2400,
+          "time": 2.5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 55,
+          "name": "G3",
+          "ticks": 2880,
+          "time": 3,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 57,
+          "name": "A3",
+          "ticks": 3360,
+          "time": 3.5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.4989583333333334,
+          "durationTicks": 479,
+          "midi": 50,
+          "name": "D3",
+          "ticks": 3840,
+          "time": 4,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.2489583333333334,
+          "durationTicks": 239,
+          "midi": 57,
+          "name": "A3",
+          "ticks": 4320,
+          "time": 4.5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.2489583333333334,
+          "durationTicks": 239,
+          "midi": 55,
+          "name": "G3",
+          "ticks": 4560,
+          "time": 4.75,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 0.9989583333333334,
+          "durationTicks": 959,
+          "midi": 53,
+          "name": "F3",
+          "ticks": 4800,
+          "time": 5,
+          "velocity": 0.6299212598425197
+        },
+        {
+          "duration": 1.9989583333333334,
+          "durationTicks": 1919,
+          "midi": 48,
+          "name": "C3",
+          "ticks": 5760,
+          "time": 6,
+          "velocity": 0.6299212598425197
+        }
+      ]
+    },
+    {
+      "channel": 0,
+      "controlChanges": {
+        "121": [
+          {
+            "number": 121,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      },
+      "pitchBends": [],
+      "instrument": {
+        "family": "piano",
+        "name": "acoustic grand piano",
+        "number": 0
+      },
+      "name": "",
+      "notes": []
+    },
+    {
+      "channel": 0,
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.7874015748031497
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ],
+        "91": [
+          {
+            "number": 91,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "93": [
+          {
+            "number": 93,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      },
+      "pitchBends": [],
+      "instrument": {
+        "family": "guitar",
+        "name": "electric guitar (muted)",
+        "number": 28
+      },
+      "name": "",
+      "notes": []
+    },
+    {
+      "channel": 0,
+      "controlChanges": {
+        "121": [
+          {
+            "number": 121,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      },
+      "pitchBends": [],
+      "instrument": {
+        "family": "piano",
+        "name": "acoustic grand piano",
+        "number": 0
+      },
+      "name": "",
+      "notes": []
+    },
+    {
+      "channel": 0,
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.7874015748031497
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "ticks": 0,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ],
+        "91": [
+          {
+            "number": 91,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "93": [
+          {
+            "number": 93,
+            "ticks": 0,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      },
+      "pitchBends": [],
+      "instrument": {
+        "family": "guitar",
+        "name": "electric guitar (jazz)",
+        "number": 26
+      },
+      "name": "",
+      "notes": []
+    }
+  ]
+}
