@@ -127,7 +127,7 @@ func play_notes():
 		
 	pointer_node = Pointer.instance()
 	add_child(pointer_node)
-	pointer_node.position = Vector2(100, 80)
+	pointer_node.position = Vector2(190, 80)
 	playing = true
 	$MusicPlayer.play()
 
@@ -146,7 +146,7 @@ func _physics_process(_delta):
 		if curPos.x > (100 + 360):
 			pointer_node.position = Vector2(100, 230)
 
-# Button signal to start song
+# Signal signal to start song
 # TODO switch this to when scene is entered
-func _on_PlayButton_pressed():
+func _on_GUI_start_song():
 	play_notes()
