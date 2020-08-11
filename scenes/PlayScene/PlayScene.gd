@@ -107,7 +107,7 @@ func place_notes(notes):
 			note_node.init(note_type)
 			
 			
-			var placementX = (360*time)/2 + posx
+			var placementX = posx + 40
 			print((360*time)/2)
 			print(placementX)
 			note_node.position = Vector2(placementX,posy)
@@ -127,7 +127,7 @@ func play_notes():
 		
 	pointer_node = Pointer.instance()
 	add_child(pointer_node)
-	pointer_node.position = Vector2(100, 80)
+	pointer_node.position = Vector2(140, 80)
 	playing = true
 	$MusicPlayer.play()
 

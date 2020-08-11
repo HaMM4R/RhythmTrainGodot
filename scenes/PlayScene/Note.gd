@@ -15,6 +15,11 @@ func init(var note_type):
 	
 	$AnimatedSprite.animation = note_type
 	
+	var collisionShape = RectangleShape2D.new()
+	
+	collisionShape.extents = Vector2(45,45)
+	$CollisionArea/CollisionShape.shape = collisionShape
+				
 	match $AnimatedSprite.animation:
 		"quarter":
 			$AnimatedSprite.offset = (Vector2(0,-45))
