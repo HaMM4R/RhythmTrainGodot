@@ -3,14 +3,16 @@ extends Node2D
 # Packed scenes for adding to the main scene
 export (PackedScene) var Note
 export (PackedScene) var Bar
-export (PackedScene) var Pointer
+
+# No longer needed as pointer is declared in scene
+#export (PackedScene) var Pointer
 
 # These could all be refactored!
 
 var playing = false
 
 # Variables for storing the active nodes
-var pointer_node
+#var $Pointer
 
 # These are't really used (yet?)
 var note_nodes = []
@@ -90,7 +92,7 @@ func place_notes(notes):
 			# MAYBE PUT THIS IN A FUNCTION?
 			if totalTime > 1:
 				# Increment bar position on y + reset x position
-				posy+= 150 
+				posy+= 250 
 				posx = 100
 				
 				# Create bar instance
@@ -125,9 +127,10 @@ func play_notes():
 	print(lengthOfBar)
 	distToTravel = (360/lengthOfBar)/60
 		
-	pointer_node = Pointer.instance()
-	add_child(pointer_node)
-	pointer_node.position = Vector2(140, 80)
+	#Pointer = Pointer.instance()
+	
+	add_child($Pointer)
+	$Pointer.position = Vector2(140, 80)
 	playing = true
 	$MusicPlayer.play()
 
@@ -138,13 +141,13 @@ func play_notes():
 func _physics_process(_delta):
 	if playing:
 		# Increase pointer pos 		
-		pointer_node.translate(Vector2(distToTravel,0))
-		var curPos = pointer_node.position 
+		$Pointer.translate(Vector2(distToTravel,0))
+		var curPos = $Pointer.position 
 		
 		# If reached the end of a bar, move to next bar
 		# TODO: MAKE THIS RELATIVE TO BAR POSITION + LENGTH
 		if curPos.x > (100 + 360):
-			pointer_node.position = Vector2(100, 230)
+			$Pointer.position = Vector2(100, 330)
 
 # Signal signal to start song
 # TODO switch this to when scene is entered

@@ -12,7 +12,9 @@
 script = ExtResource( 1 )
 Note = ExtResource( 5 )
 Bar = ExtResource( 4 )
-Pointer = ExtResource( 3 )
+
+[node name="Pointer" parent="." instance=ExtResource( 3 )]
+position = Vector2( 145, 80 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
