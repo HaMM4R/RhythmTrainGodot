@@ -23,7 +23,8 @@ stream = ExtResource( 2 )
 
 [node name="MetronomeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-[connection signal="note_hit" from="Pointer" to="." method="_on_Pointer_note_hit"]
+[connection signal="note_entered" from="Pointer" to="." method="_on_Pointer_note_entered"]
+[connection signal="note_exited" from="Pointer" to="." method="_on_Pointer_note_exited"]
 [connection signal="sound_metronome" from="GUI" to="." method="_on_GUI_sound_metronome"]
 [connection signal="start_countdown" from="GUI" to="." method="_on_GUI_start_countdown"]
 [connection signal="start_song" from="GUI" to="." method="_on_GUI_start_song"]

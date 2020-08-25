@@ -141,6 +141,10 @@ func play_notes():
 # Called every PHYSICS process
 # Roughly 60 times a second
 # TODO make the pointer reset to the start
+
+
+
+
 func _physics_process(_delta):
 	if playing:
 		# Increase pointer pos 		
@@ -166,8 +170,33 @@ func _on_GUI_sound_metronome():
 	$MetronomeSound.play()
 
 
-func _on_Pointer_note_hit():
-	score += 1
-	streak += 1
-	$GUI.update_score(score)
-	$GUI.update_streak(streak)
+var inNote
+var clickedNote = false
+
+func _input(event):
+	# On Click
+	if event.is_action_pressed("click"):
+		if inNote:
+			clickedNote = true
+			print("Clicked in note")
+			# Placeholder scoring code
+			score += 1
+			streak += 1
+			$GUI.update_score(score)
+			$GUI.update_streak(streak)
+			$Pointer.noteHit()
+		else:
+			print("Clicked out note")
+
+func _on_Pointer_note_entered():
+	# Flagging if inside note
+	inNote = true
+
+
+func _on_Pointer_note_exited():
+	inNote = false
+	if !clickedNote:
+		streak = 0
+		$GUI.update_streak(streak)
+	clickedNote = false
+	
