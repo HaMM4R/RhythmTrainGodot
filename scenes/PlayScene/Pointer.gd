@@ -1,7 +1,7 @@
 extends Node2D
 
 signal Pointer_area_entered
-
+signal note_hit
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -21,7 +21,9 @@ func _ready():
 func _on_Area2D_area_entered(area):
 	print("Entered note")
 	var noteFound = area.get_parent()
-	noteFound.get_node("AnimatedSprite").modulate = Color(1,0,0)
+	noteFound.get_node("AnimatedSprite").modulate = Color(0,1,0)
+	emit_signal("note_hit")
+	
 
 func _on_Area2D_area_exited(area):
 	print("Exited note")

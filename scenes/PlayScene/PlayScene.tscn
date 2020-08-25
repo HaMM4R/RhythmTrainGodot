@@ -14,7 +14,7 @@ Note = ExtResource( 5 )
 Bar = ExtResource( 4 )
 
 [node name="Pointer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 145, 80 )
+position = Vector2( 77, 80 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
@@ -23,6 +23,7 @@ stream = ExtResource( 2 )
 
 [node name="MetronomeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+[connection signal="note_hit" from="Pointer" to="." method="_on_Pointer_note_hit"]
 [connection signal="sound_metronome" from="GUI" to="." method="_on_GUI_sound_metronome"]
 [connection signal="start_countdown" from="GUI" to="." method="_on_GUI_start_countdown"]
 [connection signal="start_song" from="GUI" to="." method="_on_GUI_start_song"]

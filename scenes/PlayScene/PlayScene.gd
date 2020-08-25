@@ -26,6 +26,9 @@ var bpm = 85.0
 # maybe move to function 
 var distToTravel = 0
 
+var score = 0
+var streak = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Open Json file and read as text
@@ -161,3 +164,10 @@ func _on_GUI_start_countdown():
 
 func _on_GUI_sound_metronome():
 	$MetronomeSound.play()
+
+
+func _on_Pointer_note_hit():
+	score += 1
+	streak += 1
+	$GUI.update_score(score)
+	$GUI.update_streak(streak)

@@ -46,3 +46,9 @@ func _timeout():
 func _on_StartButton_pressed():
 	$StartButton.hide()
 	emit_signal("start_countdown")
+	
+func update_streak(streak):
+	$StreakLabel.text = str("Streak:", streak)
+
+func update_score(score):
+	$ScoreLabel.text = str("Score:", score)

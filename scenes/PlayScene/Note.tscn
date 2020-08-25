@@ -13,11 +13,6 @@ animations = [ {
 "name": "half",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "whole",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "quarter",
@@ -27,9 +22,15 @@ animations = [ {
 "loop": true,
 "name": "eighth",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "whole",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.8273, 10 )
 
 [node name="Note" type="Node2D"]
 script = ExtResource( 1 )
