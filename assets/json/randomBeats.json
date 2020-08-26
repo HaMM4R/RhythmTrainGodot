@@ -22,10 +22,27 @@
       ]
     },
 	{
-      "name": "4 Quarter",
+      "name": "2 Half",
       "notes": [
         {
           "time": 0.5,
+          "name": "E4"
+        },
+        {
+          "time": 0.5,
+          "name": "E4"
+        }
+      ]
+    },
+	{
+      "name": "2 Quarter 1 Half",
+      "notes": [
+        {
+          "time": 0.25,
+          "name": "E4"
+        },
+        {
+          "time": 0.25,
           "name": "E4"
         },
         {

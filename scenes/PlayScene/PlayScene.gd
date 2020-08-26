@@ -43,7 +43,7 @@ func _ready():
 	place_notes(music_json)
 	
 # Function to place 2 bars with notes on the scene
-func place_notes(notes):
+func place_notes(bars):
 	# Initial positions for bars/notes
 	# TODO make placement nicer + make some more variables for it
 	var posx = 100
@@ -62,8 +62,18 @@ func place_notes(notes):
 	# Counter for counting the current notes
 	var totalTime = 0
 	
+	var selectedBars = []
+		
+	# Select a random bar 3 times
+	for n in range(3):
+		print(bars["RandomBars"].size())
+		randomize()
+		var selectedBar = randi()%bars["RandomBars"].size()
+		selectedBars.append(bars["RandomBars"][selectedBar])
+		
+	
 	# For each note in each Random Bar 
-	for bar in notes["RandomBars"]:
+	for bar in selectedBars:
 		for note in bar["notes"]:
 			
 			
@@ -83,17 +93,20 @@ func place_notes(notes):
 					note_type = "whole"
 			
 			
-			totalTime += time
+			
 			 
 			# Increment note counter
 			#currentNote+=1
 		
 			
-			
+			var note_node = Note.instance()
+			add_child(note_node)
+			note_node.init(note_type)
 			
 			# TODO:
 			# MAYBE PUT THIS IN A FUNCTION?
-			if totalTime > 1:
+			print("Time: ", totalTime)
+			if totalTime >= 1:
 				# Increment bar position on y + reset x position
 				posy+= 250 
 				posx = 100
@@ -107,10 +120,8 @@ func place_notes(notes):
 			
 			# Create note instance
 			# TODO: ADD NOTES TO NOTE ARRAY/DICT SO NOTES ARE TRACKABLE
-			var note_node = Note.instance()
-			add_child(note_node)
-			note_node.init(note_type)
 			
+			totalTime += time
 			
 			var placementX = posx + 40
 			print((360*time)/2)
@@ -131,8 +142,8 @@ func play_notes():
 	distToTravel = (360/lengthOfBar)/60
 		
 	#Pointer = Pointer.instance()
+	#add_child($Pointer)
 	
-	add_child($Pointer)
 	$Pointer.position = Vector2(140, 80)
 	playing = true
 	$MusicPlayer.play()
@@ -143,7 +154,7 @@ func play_notes():
 # TODO make the pointer reset to the start
 
 
-
+var barCount = 1
 
 func _physics_process(_delta):
 	if playing:
@@ -154,7 +165,12 @@ func _physics_process(_delta):
 		# If reached the end of a bar, move to next bar
 		# TODO: MAKE THIS RELATIVE TO BAR POSITION + LENGTH
 		if curPos.x > (100 + 360):
-			$Pointer.position = Vector2(100, 330)
+			if barCount == 3:
+				$Pointer.position = Vector2(100, 80)
+				barCount = 1
+			else:
+				$Pointer.position = Vector2(100, (curPos.y+250))
+				barCount += 1
 
 # Signal signal to start song
 # TODO switch this to when scene is entered
