@@ -29,6 +29,8 @@ var distToTravel = 0
 var score = 0
 var streak = 0
 
+var music_json
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Open Json file and read as text
@@ -38,11 +40,28 @@ func _ready():
 	file.close()
 	
 	# Parse Json
-	var music_json = JSON.parse(text).result
-
+	music_json = JSON.parse(text).result
+	
+	place_bars()
 	place_notes(music_json)
 	
+	
+func remove_notes():
+	for note in note_nodes:
+		note.queue_free()
+		
+	note_nodes.clear()
 # Function to place 2 bars with notes on the scene
+
+func place_bars():
+	var posx = 100
+	var posy = 200
+	for n in range(3):
+		var bar_node = Bar.instance()
+		add_child(bar_node)
+		bar_node.position = Vector2(posx,posy)
+		posy+= 250 
+		
 func place_notes(bars):
 	# Initial positions for bars/notes
 	# TODO make placement nicer + make some more variables for it
@@ -100,6 +119,7 @@ func place_notes(bars):
 		
 			
 			var note_node = Note.instance()
+			note_nodes.append(note_node)
 			add_child(note_node)
 			note_node.init(note_type)
 			
@@ -112,9 +132,9 @@ func place_notes(bars):
 				posx = 100
 				
 				# Create bar instance
-				var bar_node = Bar.instance()
-				add_child(bar_node)
-				bar_node.position = Vector2(posx,posy)
+				#var bar_node = Bar.instance()
+				#add_child(bar_node)
+				#bar_node.position = Vector2(posx,posy)
 				#currentNote = 0
 				totalTime = 0
 			
@@ -168,6 +188,8 @@ func _physics_process(_delta):
 			if barCount == 3:
 				$Pointer.position = Vector2(100, 80)
 				barCount = 1
+				remove_notes()
+				place_notes(music_json)
 			else:
 				$Pointer.position = Vector2(100, (curPos.y+250))
 				barCount += 1
