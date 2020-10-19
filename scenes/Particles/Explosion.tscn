@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.00118483, 0.235782, 0.827014, 1 )
+colors = PoolColorArray( 1, 0.967041, 0.789063, 1, 0.898438, 0.507455, 0.0912476, 1, 0.75, 0.194409, 0.1875, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+min_value = -400.0
+max_value = 400.0
+_data = [ Vector2( 0, 400 ), 0.0, 0.0, 0, 0, Vector2( 0.106113, 378.182 ), -3755.45, -3755.45, 0, 0, Vector2( 1, -190.455 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+max_value = 2.5
+_data = [ Vector2( 0, 2.48295 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.482955 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 500.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 5 )
+damping = 500.0
+scale = 5.0
+scale_random = 1.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Environment" id=9]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 0.14
+glow_strength = 1.02
+
+[node name="Particles2D" type="Particles2D"]
+material = SubResource( 1 )
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 5.0
+explosiveness = 0.5
+process_material = SubResource( 8 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 9 )

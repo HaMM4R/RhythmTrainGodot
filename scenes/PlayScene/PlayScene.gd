@@ -225,7 +225,7 @@ var clickedNote = false
 func _input(event):
 	# On Click
 	if event.is_action_pressed("click"):
-		if inNote:
+		if inNote and !clickedNote:
 			clickedNote = true
 			print("Clicked in note")
 			# Increment score
@@ -235,6 +235,9 @@ func _input(event):
 			$GUI.update_streak(streak)
 			$Pointer.noteHit()
 		else:
+			streak = 0
+			$GUI.update_score(score)
+			$GUI.update_streak(streak)
 			print("Clicked out note")
 
 

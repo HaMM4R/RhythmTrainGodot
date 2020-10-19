@@ -33,13 +33,14 @@ func _on_Area2D_area_exited(area):
 	var noteFound = area.get_parent()
 	# If the note wasn't hit, turn it red
 	if !noteIsHit:
-		noteFound.get_node("AnimatedSprite").modulate = Color(1,0,0)
+		noteFound.get_node("AnimatedSprite").modulate = Color(0.5,0,0)
 	noteIsHit = false
 		
 
 func noteHit():
 	# When the note is hit, turn the note G r e e n
 	var noteFound = currentNote.get_parent()
-	noteFound.get_node("AnimatedSprite").modulate = Color(0,1,0)
+	noteFound.get_node("AnimatedSprite").modulate = Color(0,1,0, 0.5)
+	noteFound.get_node("Particles2D").emitting = true
 	noteIsHit = true
 	
