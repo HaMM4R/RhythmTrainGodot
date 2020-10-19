@@ -11,7 +11,7 @@ var TimerCount = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,9 +19,12 @@ func _ready():
 #	pass
 
 
+# Start the countdown
 func song_countdown(bpm):
 	print("countdown time")
 	emit_signal("sound_metronome")
+	
+	# Start a new one second timer
 	CountdownTimer = Timer.new()
 	add_child(CountdownTimer)
 	var BeatLength = 1/(bpm/60.0)
@@ -29,10 +32,13 @@ func song_countdown(bpm):
 	CountdownTimer.wait_time = BeatLength
 	CountdownTimer.connect("timeout", self, "_timeout")	
 	CountdownTimer.start()
-	
+
+# On timer timeout
 func _timeout():
 	print("TimerGone")
+	# Decrement the timer amount
 	TimerCount -= 1
+	# If timer has run out, start the song
 	if TimerCount == 0:
 		emit_signal("start_song")
 		$CountdownLabel.hide()
@@ -42,6 +48,7 @@ func _timeout():
 		$CountdownLabel.text = String(TimerCount)
 	
 	
+
 
 func _on_StartButton_pressed():
 	$StartButton.hide()

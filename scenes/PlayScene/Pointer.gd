@@ -1,18 +1,16 @@
 extends Node2D
 
+# Singals to tell main loop when pointer enters/leaves notes
 signal Pointer_area_entered
 signal note_entered
 signal note_exited
 
 var noteIsHit
-# Declare member variables here. Examples:
-# var a = 2 
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,12 +19,13 @@ func _ready():
 
 var currentNote
 
+# Triggered when pointer enters another area
 func _on_Area2D_area_entered(area):
 	print("Entered note")
 	emit_signal("note_entered")
 	currentNote = area
 	
-
+# Triggered when pointer leaves another area
 func _on_Area2D_area_exited(area):
 	print("Exited note")
 	emit_signal("note_exited")
@@ -37,6 +36,7 @@ func _on_Area2D_area_exited(area):
 		noteFound.get_node("AnimatedSprite").modulate = Color(1,0,0)
 	noteIsHit = false
 		
+
 func noteHit():
 	# When the note is hit, turn the note G r e e n
 	var noteFound = currentNote.get_parent()
