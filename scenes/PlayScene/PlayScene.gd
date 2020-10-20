@@ -23,6 +23,10 @@ var distToTravel = 0
 var score = 0
 var streak = 0
 
+# getting the current note
+var curNote = 0
+var noteClicked
+
 # stores the data loaded from the json file
 var music_json
 
@@ -78,10 +82,13 @@ func place_notes(bars):
 	# Initial positions for bars/notes
 	var posx = 100
 	var posy = 200
+	var index = 0
 	
 	# Counter for counting the current notes
 	var totalTime = 0
 	
+	#Reset the current note ready for new bar set
+	curNote = 0
 	
 	# - Bar selection -
 	
@@ -103,10 +110,9 @@ func place_notes(bars):
 	# For each note in each Random Bar 
 	for bar in selectedBars:
 		for note in bar["notes"]:
-			
 			# stores the time value of the note
 			var time = note["time"]
-			
+
 			# stores the type of note
 			var note_type
 			
@@ -122,13 +128,16 @@ func place_notes(bars):
 					note_type = "whole"
 			
 			# Create note instance
+			index += 1
 			var note_node = Note.instance()
+			note_node.init(note_type, index)
 			note_nodes.append(note_node)
 			add_child(note_node)
-			note_node.init(note_type)
+			
+			
 			
 			# TODO MAYBE PUT THIS IN A FUNCTION?
-			print("Time: ", totalTime)
+
 			
 			# If the total duration of the notes in the bar more than one
 			if totalTime >= 1:
@@ -148,19 +157,18 @@ func place_notes(bars):
 			
 			# Set placement of note
 			var placementX = posx + 40
-			print((360*time)/2)
-			print(placementX)
 			note_node.position = Vector2(placementX,posy)
 			posx+=360*time
+		index = 0
 
 # Play the notes
 func play_notes():
 	
-	print("Beats per minute:",bpm)
+	#print("Beats per minute:",bpm)
 	var beatsPerSecond = (bpm/60.0)
-	print("Beats per second:",beatsPerSecond)
+	#print("Beats per second:",beatsPerSecond)
 	var lengthOfBar = (1/beatsPerSecond)*4
-	print(lengthOfBar)
+	#print(lengthOfBar)
 	distToTravel = (360/lengthOfBar)/60
 		
 	# Start Pointer
@@ -220,14 +228,13 @@ var inNote
 
 # Stores where the note is clicked
 var clickedNote = false
-
+var successfulClick = false
 # Input events
 func _input(event):
 	# On Click
 	if event.is_action_pressed("click"):
-		if inNote and !clickedNote:
+		if inNote and !clickedNote and successfulClick:
 			clickedNote = true
-			print("Clicked in note")
 			# Increment score
 			score += 1
 			streak += 1
@@ -235,17 +242,23 @@ func _input(event):
 			$GUI.update_streak(streak)
 			$Pointer.noteHit()
 		else:
+			#Reset score if clicked at the wrong time
 			streak = 0
+			successfulClick = false
 			$GUI.update_score(score)
 			$GUI.update_streak(streak)
-			print("Clicked out note")
+			#print("Clicked out note")
+		#print (get_viewport().get_mouse_position())
 
 
 # Fucntion for when pointer enters note
 func _on_Pointer_note_entered():
 	# Flagging if inside note
 	inNote = true
-
+	# Sets the current note in the bar and checks for clicks
+	note_nodes[curNote].connect("clicked_note", self, "note_area_clicked")
+	curNote += 1
+	
 
 # Function for when pointer exits note
 # If a the note is missed, the streak is reset
@@ -256,3 +269,6 @@ func _on_Pointer_note_exited():
 		$GUI.update_streak(streak)
 	clickedNote = false
 	
+#Checks to see if you have clicked on a note head
+func note_area_clicked():
+	successfulClick = true

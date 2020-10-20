@@ -21,13 +21,13 @@ var currentNote
 
 # Triggered when pointer enters another area
 func _on_Area2D_area_entered(area):
-	print("Entered note")
+	#print("Entered note")
 	emit_signal("note_entered")
 	currentNote = area
 	
 # Triggered when pointer leaves another area
 func _on_Area2D_area_exited(area):
-	print("Exited note")
+	#print("Exited note")
 	emit_signal("note_exited")
 	 
 	var noteFound = area.get_parent()
