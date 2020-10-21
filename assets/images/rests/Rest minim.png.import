@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rest quaver.png-a1222c00ff4271b8f7cc316440c8556d.stex"
+path="res://.import/Rest minim.png-9d3e82e6d56c24e1500ebdf76c9f6362.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Rest quaver.png"
-dest_files=[ "res://.import/Rest quaver.png-a1222c00ff4271b8f7cc316440c8556d.stex" ]
+source_file="res://assets/images/rests/Rest minim.png"
+dest_files=[ "res://.import/Rest minim.png-9d3e82e6d56c24e1500ebdf76c9f6362.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Semiquaver.png-255f23b4c01c3be7458065c5f80e5378.stex"
+path="res://.import/Crotchet.png-9a49ca60b0bb3d7f635841a8226489a3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Semiquaver.png"
-dest_files=[ "res://.import/Semiquaver.png-255f23b4c01c3be7458065c5f80e5378.stex" ]
+source_file="res://assets/images/notes/Crotchet.png"
+dest_files=[ "res://.import/Crotchet.png-9a49ca60b0bb3d7f635841a8226489a3.stex" ]
 
 [params]
 

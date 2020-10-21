@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/PlayScene/Note.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/Crotchet.png" type="Texture" id=2]
-[ext_resource path="res://assets/images/Semibreve.png" type="Texture" id=3]
-[ext_resource path="res://assets/images/Quaver single.png" type="Texture" id=4]
-[ext_resource path="res://assets/images/Minim.png" type="Texture" id=5]
-[ext_resource path="res://scenes/Particles/Explosion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/images/notes/Crotchet.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/notes/Semibreve.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/notes/Quaver single.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/notes/Minim.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +44,4 @@ scale = Vector2( 1, 5.96 )
 
 [node name="CollisionShape" type="CollisionShape2D" parent="CollisionArea"]
 shape = SubResource( 2 )
-
-[node name="Particles2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( -2, 0 )
 [connection signal="input_event" from="CollisionArea" to="." method="_on_CollisionArea_input_event"]

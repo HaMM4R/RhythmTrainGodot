@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Rest crotchet.png-f7b6cce77461bf1e948dd20fad815fba.stex"
+path="res://.import/barStave.png-aced2c3f113b3281268c692d3269bf48.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Rest crotchet.png"
-dest_files=[ "res://.import/Rest crotchet.png-f7b6cce77461bf1e948dd20fad815fba.stex" ]
+source_file="res://assets/images/bars/barStave.png"
+dest_files=[ "res://.import/barStave.png-aced2c3f113b3281268c692d3269bf48.stex" ]
 
 [params]
 

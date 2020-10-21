@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Quaver single.png-e975392ecb2ad8a9502475022f4ce376.stex"
+path="res://.import/Quaver single.png-cb0788fdf4c64c64a3093cf9f465421e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Quaver single.png"
-dest_files=[ "res://.import/Quaver single.png-e975392ecb2ad8a9502475022f4ce376.stex" ]
+source_file="res://assets/images/notes/Quaver single.png"
+dest_files=[ "res://.import/Quaver single.png-cb0788fdf4c64c64a3093cf9f465421e.stex" ]
 
 [params]
 

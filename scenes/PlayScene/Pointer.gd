@@ -41,6 +41,7 @@ func noteHit():
 	# When the note is hit, turn the note G r e e n
 	var noteFound = currentNote.get_parent()
 	noteFound.get_node("AnimatedSprite").modulate = Color(0,1,0, 0.5)
-	noteFound.get_node("Particles2D").emitting = true
+	#noteFound.get_node("Particles2D").emitting = true
 	noteIsHit = true
+	$Particles2D.emitting = true
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Minim.png-9e1c0faab702161aad336f13b2601a0c.stex"
+path="res://.import/Rest crotchet.png-171a30d9eb4c053a4011e3c81b3bf941.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Minim.png"
-dest_files=[ "res://.import/Minim.png-9e1c0faab702161aad336f13b2601a0c.stex" ]
+source_file="res://assets/images/rests/Rest crotchet.png"
+dest_files=[ "res://.import/Rest crotchet.png-171a30d9eb4c053a4011e3c81b3bf941.stex" ]
 
 [params]
 

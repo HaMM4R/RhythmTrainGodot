@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Semibreve.png-ddf9941bf9ada18d3c3606b25b1cc38e.stex"
+path="res://.import/Rest semiquaver.png-3d1249a5cb0a041c0716093049c22bcd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Semibreve.png"
-dest_files=[ "res://.import/Semibreve.png-ddf9941bf9ada18d3c3606b25b1cc38e.stex" ]
+source_file="res://assets/images/rests/Rest semiquaver.png"
+dest_files=[ "res://.import/Rest semiquaver.png-3d1249a5cb0a041c0716093049c22bcd.stex" ]
 
 [params]
 
