@@ -1,13 +1,37 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/PlayScene/Note.gd" type="Script" id=1]
 [ext_resource path="res://assets/images/notes/Crotchet.png" type="Texture" id=2]
 [ext_resource path="res://assets/images/notes/Semibreve.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/notes/Quaver single.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/notes/Minim.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/rests/Rest semiquaver.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/rests/Rest minim.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/rests/Rest crotchet.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/rests/Rest semibreve.png" type="Texture" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "wholeR",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "eighthR",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "quarterR",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "halfR",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "half",
@@ -37,7 +61,7 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "quarter"
+animation = "eighthR"
 
 [node name="CollisionArea" type="Area2D" parent="."]
 scale = Vector2( 1, 5.96 )

@@ -112,6 +112,13 @@ func place_notes(bars):
 		for note in bar["notes"]:
 			# stores the time value of the note
 			var time = note["time"]
+			
+			var note_name = note["name"]
+			
+			var rest = false
+			
+			if note_name == "r":
+				rest = true
 
 			# stores the type of note
 			var note_type
@@ -130,7 +137,7 @@ func place_notes(bars):
 			# Create note instance
 			index += 1
 			var note_node = Note.instance()
-			note_node.init(note_type, index)
+			note_node.init(note_type, rest, index)
 			note_nodes.append(note_node)
 			add_child(note_node)
 			
