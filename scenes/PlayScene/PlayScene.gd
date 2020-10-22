@@ -159,7 +159,8 @@ func place_notes(bars):
 			var placementX = posx + 40
 			note_node.position = Vector2(placementX,posy)
 			posx+=360*time
-		index = 0
+
+
 
 # Play the notes
 func play_notes():
@@ -228,27 +229,22 @@ var inNote
 
 # Stores where the note is clicked
 var clickedNote = false
-var successfulClick = false
-# Input events
-func _input(event):
-	# On Click
-	if event.is_action_pressed("click"):
-		if inNote and !clickedNote and successfulClick:
-			clickedNote = true
-			# Increment score
-			score += 1
-			streak += 1
-			$GUI.update_score(score)
-			$GUI.update_streak(streak)
-			$Pointer.noteHit()
-		else:
-			#Reset score if clicked at the wrong time
-			streak = 0
-			successfulClick = false
-			$GUI.update_score(score)
-			$GUI.update_streak(streak)
-			#print("Clicked out note")
-		#print (get_viewport().get_mouse_position())
+
+#Check for note hit
+func note_hit():
+	if inNote and !clickedNote:
+		clickedNote = true
+		# Increment score
+		score += 1
+		streak += 1
+		$GUI.update_score(score)
+		$GUI.update_streak(streak)
+		$Pointer.noteHit()
+	else:
+		#Reset score if clicked at the wrong time
+		streak = 0
+		$GUI.update_score(score)
+		$GUI.update_streak(streak)
 
 
 # Fucntion for when pointer enters note
@@ -268,7 +264,10 @@ func _on_Pointer_note_exited():
 		streak = 0
 		$GUI.update_streak(streak)
 	clickedNote = false
+
 	
 #Checks to see if you have clicked on a note head
-func note_area_clicked():
-	successfulClick = true
+func note_area_clicked(id):
+	if(id == curNote):
+		note_hit()
+
